@@ -33,15 +33,15 @@ openapi-type: arm
 tag: package-preview-2020-03
 ```
 
-
 ### Tag: package-preview-2020-03
 
 These settings apply only when `--tag=package-preview-2020-03` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2020-03'
+``` yaml $(tag) == 'package-preview-2020-03'
 input-file:
   - Microsoft.CognitiveServices/preview/2020-03-01/cognitiveservices.json
 ```
+
 ### Tag: package-2017-04
 
 These settings apply only when `--tag=package-2017-04` is specified on the command line.
@@ -145,4 +145,14 @@ java:
   output-folder: $(azure-libraries-for-java-folder)/cognitiveservices/resource-manager/v2016_02_01_preview
 regenerate-manager: true
 generate-interface: true
+```
+
+## Suppression
+
+``` yaml
+directive:
+  - suppress: INVALID_TYPE
+    from: cognitiveservices.json
+    where: $.definitions.CognitiveServicesAccount
+    reason: 'None '
 ```
